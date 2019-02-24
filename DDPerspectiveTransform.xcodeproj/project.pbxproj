@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		0E37EAAC221FF3DE00E541A4 /* DDPerspectiveTransform.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E37EAAA221FF3DE00E541A4 /* DDPerspectiveTransform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E37EAB7221FF52500E541A4 /* DDPerspectiveTransformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E37EAB2221FF52500E541A4 /* DDPerspectiveTransformViewController.swift */; };
+		0E37EAB8221FF52500E541A4 /* DDPerspectiveTransformImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E37EAB4221FF52500E541A4 /* DDPerspectiveTransformImageView.swift */; };
+		0E37EAB9221FF52500E541A4 /* DDPerspectiveTransformPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E37EAB6221FF52500E541A4 /* DDPerspectiveTransformPointView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0E37EAA7221FF3DE00E541A4 /* DDPerspectiveTransform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DDPerspectiveTransform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E37EAAA221FF3DE00E541A4 /* DDPerspectiveTransform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDPerspectiveTransform.h; sourceTree = "<group>"; };
 		0E37EAAB221FF3DE00E541A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E37EAB2221FF52500E541A4 /* DDPerspectiveTransformViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDPerspectiveTransformViewController.swift; sourceTree = "<group>"; };
+		0E37EAB4221FF52500E541A4 /* DDPerspectiveTransformImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDPerspectiveTransformImageView.swift; sourceTree = "<group>"; };
+		0E37EAB6221FF52500E541A4 /* DDPerspectiveTransformPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDPerspectiveTransformPointView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +53,9 @@
 			isa = PBXGroup;
 			children = (
 				0E37EAAA221FF3DE00E541A4 /* DDPerspectiveTransform.h */,
+				0E37EAB2221FF52500E541A4 /* DDPerspectiveTransformViewController.swift */,
+				0E37EAB4221FF52500E541A4 /* DDPerspectiveTransformImageView.swift */,
+				0E37EAB6221FF52500E541A4 /* DDPerspectiveTransformPointView.swift */,
 				0E37EAAB221FF3DE00E541A4 /* Info.plist */,
 			);
 			path = DDPerspectiveTransform;
@@ -95,6 +104,7 @@
 				TargetAttributes = {
 					0E37EAA6221FF3DE00E541A4 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -130,6 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E37EAB9221FF52500E541A4 /* DDPerspectiveTransformPointView.swift in Sources */,
+				0E37EAB8221FF52500E541A4 /* DDPerspectiveTransformImageView.swift in Sources */,
+				0E37EAB7221FF52500E541A4 /* DDPerspectiveTransformViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +274,7 @@
 		0E37EAB0221FF3DE00E541A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -277,6 +291,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Signature.DDPerspectiveTransform;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -285,6 +300,7 @@
 		0E37EAB1221FF3DE00E541A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;

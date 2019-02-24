@@ -2,8 +2,8 @@
 //  DDPerspectiveTransform.h
 //  DDPerspectiveTransform
 //
-//  Created by Доценко Дмитрий on 22/02/2019.
-//  Copyright © 2019 Dotsenko-D. All rights reserved.
+//  Created by Dmitriy Dotsenko on 22/02/2019.
+//  Copyright © 2019 Dmitriy Dotsenko. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
