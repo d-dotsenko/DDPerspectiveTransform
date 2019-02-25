@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
 	spec.platform 		= :ios
 	spec.summary 		= "DDPerspectiveTransform lets a user do warp image transformation"
 	spec.requires_arc 	= true
-	spec.version 		= "1.0.1"
+	spec.version 		= "1.0.2"
 	spec.license 		= { :type => "MIT", :file => "LICENSE" }	
 	spec.author 		= { "Dmitriy Dotsenko" => "d.dotsenko@icloud.com" }
 	spec.homepage 		= "https://github.com/d-dotsenko/DDPerspectiveTransform"
