@@ -7,18 +7,15 @@
 #
 
 Pod::Spec.new do |spec|
-
-  spec.platform = :ios
-  spec.name             = "DDPerspectiveTransform"
-  spec.version          = "0.0.1"
-  spec.summary          = "Warp image transformation"
-  spec.homepage         = "https://github.com/d-dotsenko/DDPerspectiveTransform"
-  spec.license          = "MIT"
-  spec.author           = "Dmitriy Dotsenko"
-  spec.source           = { :git => "https://github.com/d-dotsenko/DDPerspectiveTransform.git",
-                            :tag => "#{spec.version}" }
-  spec.source_files     = "DDPerspectiveTransform/**/*.{h,swift}"
-  spec.frameworks       = "UIKit"
-  spec.swift_version    = "4.2"
-
+	spec.name 		= 'DDPerspectiveTransform'
+	spec.platform 		= :ios
+	spec.version 		= '1.0.0'
+	spec.summary 		= 'Warp image transformation'
+	spec.homepage 		= 'https://github.com/d-dotsenko/DDPerspectiveTransform'
+	spec.license 		= 'MIT'
+	spec.author 		= 'Dmitriy Dotsenko'
+	spec.source 		= { :git => 'https://github.com/d-dotsenko/DDPerspectiveTransform.git', :tag => spec.version }
+	spec.source_files 	= 'DDPerspectiveTransform/**/*.{h,swift}'
+	spec.frameworks 	= 'UIKit'
+	spec.swift_version 	= '4.2'
 end
