@@ -1,21 +1,17 @@
-#
-#  Be sure to run `pod spec lint DDPerspectiveTransform.podspec' to ensure this is a
-#  valid spec and to remove all comments including this before submitting the spec.
-#
-#  To learn more about Podspec attributes see https://docs.cocoapods.org/specification.html
-#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
-#
-
 Pod::Spec.new do |spec|
-	spec.name 		= 'DDPerspectiveTransform'
+
+	spec.name 		= "DDPerspectiveTransform"
 	spec.platform 		= :ios
-	spec.version 		= '1.0.0'
-	spec.summary 		= 'Warp image transformation'
-	spec.homepage 		= 'https://github.com/d-dotsenko/DDPerspectiveTransform'
-	spec.license 		= 'MIT'
-	spec.author 		= 'Dmitriy Dotsenko'
-	spec.source 		= { :git => 'https://github.com/d-dotsenko/DDPerspectiveTransform.git', :tag => spec.version.to_s }
-	spec.source_files 	= 'DDPerspectiveTransform/*.{h,swift}'
-	spec.frameworks 	= 'UIKit'
-	spec.swift_version 	= '4.2'
+	spec.summary 		= "DDPerspectiveTransform lets a user do warp image transformation"
+	spec.requires_arc 	= true
+	spec.version 		= "1.0.1"
+	spec.license 		= { :type => "MIT", :file => "LICENSE" }	
+	spec.author 		= { "Dmitriy Dotsenko" => "d.dotsenko@icloud.com" }
+	spec.homepage 		= "https://github.com/d-dotsenko/DDPerspectiveTransform"
+	spec.source 		= { :git => "https://github.com/d-dotsenko/DDPerspectiveTransform.git", :tag => "#{spec.version}" }
+	spec.frameworks 	= "UIKit"
+	spec.source_files 	= "DDPerspectiveTransform/**/*.{h,swift}"
+	spec.resources 		= "DDPerspectiveTransform/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+	spec.swift_version 	= "4.2"
+
 end
