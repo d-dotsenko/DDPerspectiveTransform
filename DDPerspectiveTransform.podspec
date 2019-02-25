@@ -11,7 +11,6 @@ Pod::Spec.new do |spec|
 	spec.source 		= { :git => "https://github.com/d-dotsenko/DDPerspectiveTransform.git", :tag => "#{spec.version}" }
 	spec.frameworks 	= "UIKit"
 	spec.source_files 	= "DDPerspectiveTransform/**/*.{h,swift}"
-	spec.resources 		= "DDPerspectiveTransform/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
 	spec.swift_version 	= "4.2"
-
+	spec.ios.deployment_target 	= "8.2"
 end
