@@ -40,7 +40,7 @@ open class DDPerspectiveTransformViewController: UIViewController {
     
     /// MARK: - Public VARs
     
-    public weak var delegate: DDPerspectiveTransformProtocol?
+    open weak var delegate: DDPerspectiveTransformProtocol?
     
     /*
      The image for cropping
@@ -64,6 +64,7 @@ open class DDPerspectiveTransformViewController: UIViewController {
     
     /*
      Minimum padding value for all sides
+     Default is view.frame.size.width / 8.0
      */
     open var padding: CGFloat? {
         set {
@@ -105,7 +106,7 @@ open class DDPerspectiveTransformViewController: UIViewController {
     
     /*
      The color of box lines
-     Default to `UIColor(red: 243.0/255.0, green: 231.0/255.0, blue: 109.0/255.0, alpha: 1.0)`
+     Default is `UIColor(red: 243.0/255.0, green: 231.0/255.0, blue: 109.0/255.0, alpha: 1.0)`
      */
     open var boxLineColor: UIColor? {
         didSet {
@@ -114,7 +115,7 @@ open class DDPerspectiveTransformViewController: UIViewController {
     }
     
     /*
-     The width of box lines. Default to `6`
+     The width of box lines. Default is `6`
      */
     open var boxLineWidth: CGFloat? {
         didSet {
@@ -124,6 +125,7 @@ open class DDPerspectiveTransformViewController: UIViewController {
     
     /*
      The size of checkpoint
+     Default is CGSize(width: 80, height: 80)
      */
     open var pointSize: CGSize? {
         didSet {
@@ -133,6 +135,7 @@ open class DDPerspectiveTransformViewController: UIViewController {
     
     /*
      The color of checkpoint
+     Default is UIColor.red
      */
     open var pointColor: UIColor? {
         didSet {
@@ -171,7 +174,7 @@ open class DDPerspectiveTransformViewController: UIViewController {
         guard let image = image else {
             return
         }
-        if let ciImage:CIImage = CIImage(image: image) {
+        if let ciImage: CIImage = CIImage(image: image) {
             let croppedCIImage = getCroppedImage(image: ciImage, topL: points[0], topR: points[1], botL: points[3], botR: points[2])
             if let croppedImageCG = CIContext(options: nil).createCGImage(croppedCIImage, from: croppedCIImage.extent) {
                 let croptedImage = UIImage(cgImage: croppedImageCG)
@@ -187,6 +190,9 @@ open class DDPerspectiveTransformViewController: UIViewController {
     /// MARK: - Private
     
     private func reset() {
+        perspectiveImageView?.setNeedsLayout()
+        perspectiveImageView?.layoutIfNeeded()
+        
         setupPoints()
         setupRectangleLayer()
     }
@@ -258,7 +264,7 @@ open class DDPerspectiveTransformViewController: UIViewController {
         return image.applyingFilter("CIPerspectiveCorrection", parameters: coords)
     }
     
-    @objc private func gesturePanAction(gr:UIPanGestureRecognizer) {
+    @objc private func gesturePanAction(gr: UIPanGestureRecognizer) {
         let translation = gr.translation(in: view)
         if let view = gr.view {
             
@@ -273,7 +279,7 @@ open class DDPerspectiveTransformViewController: UIViewController {
         gr.setTranslation(.zero, in: view)
     }
     
-    private func changePoints(curPoint:CGPoint, destPoint:CGPoint) -> Bool {
+    private func changePoints(curPoint: CGPoint, destPoint :CGPoint) -> Bool {
         guard let index = points.firstIndex(of: curPoint) else {
             return false
         }
@@ -284,20 +290,21 @@ open class DDPerspectiveTransformViewController: UIViewController {
 }
 
 extension CGPoint {
-    func toVector(image:CIImage) -> CIVector {
+    func toVector(image: CIImage) -> CIVector {
         return CIVector(x: x, y: image.extent.height-y)
     }
 }
 
 extension CAShapeLayer {
-    func getPath(points:[CGPoint], lineColor:UIColor? = nil, lineWidth:CGFloat? = nil) {
+    func getPath(points: [CGPoint], lineColor: UIColor? = nil, lineWidth: CGFloat? = nil) {
         
         guard points.count > 2 else {
             return
         }
         let defaultColor = UIColor(red: 243.0/255.0, green: 231.0/255.0, blue: 109.0/255.0, alpha: 1.0)
+        let defaultLineWidth: CGFloat = 6
         let aLineColor = lineColor ?? defaultColor
-        let aLineWidth:CGFloat = lineWidth ?? 6
+        let aLineWidth: CGFloat = lineWidth ?? defaultLineWidth
         let path = UIBezierPath()
         
         for (index, point) in points.enumerated().lazy {

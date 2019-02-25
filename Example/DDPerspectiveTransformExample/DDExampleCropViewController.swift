@@ -14,5 +14,4 @@ class DDExampleCropViewController: DDPerspectiveTransformViewController {
     @IBAction func cropButtonPressed(_ sender: Any) {
         cropAction()
     }
-    
 }

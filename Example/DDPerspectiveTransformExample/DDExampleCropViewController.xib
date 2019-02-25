@@ -22,6 +22,10 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dr1-Je-She">
                     <rect key="frame" x="164.5" y="611" width="46" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="ZhI-JD-Mze"/>
+                        <constraint firstAttribute="height" constant="36" id="drD-lo-7eN"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <state key="normal" title="Crop">
                         <color key="titleColor" red="0.95113331079999996" green="0.90634471179999998" blue="0.42723411319999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -34,7 +38,7 @@
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="dr1-Je-She" firstAttribute="centerX" secondItem="auq-Ze-nOY" secondAttribute="centerX" id="B0Z-NJ-4UI"/>
-                <constraint firstItem="3Ol-05-Yyg" firstAttribute="bottom" secondItem="dr1-Je-She" secondAttribute="bottom" constant="20" id="xKf-hf-eYG"/>
+                <constraint firstAttribute="bottom" secondItem="dr1-Je-She" secondAttribute="bottom" constant="20" id="dLx-Og-IPa"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="3Ol-05-Yyg"/>
             <point key="canvasLocation" x="135" y="129"/>

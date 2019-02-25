@@ -25,29 +25,29 @@ import UIKit
 
 class DDPerspectiveTransformImageView: UIImageView {
     
-    public private(set) var scaleRatio:CGFloat = 1.0
+    public private(set) var scaleRatio: CGFloat = 1.0
     
-    var padding:CGFloat? {
+    var padding: CGFloat? {
         didSet {
             reset()
         }
     }
     
-    var paddingWidth:CGFloat? {
+    var paddingWidth: CGFloat? {
         didSet {
             reset()
         }
     }
     
-    var paddingHeight:CGFloat? {
+    var paddingHeight: CGFloat? {
         didSet {
             reset()
         }
     }
     
-    private weak var aSuperView:UIView?
+    private weak var aSuperView: UIView?
     
-    init(image: UIImage, aSuperView:UIView) {
+    init(image: UIImage, aSuperView: UIView) {
         super.init(image: image)
         
         self.aSuperView = aSuperView
@@ -76,9 +76,9 @@ class DDPerspectiveTransformImageView: UIImageView {
         let offsetW = image.size.width - superViewFrame.size.width
         let offsetH = image.size.height - superViewFrame.size.height
         
-        let paddingW:CGFloat = self.paddingWidth ?? (padding ?? superViewFrame.size.width / 8.0)
-        let paddingH:CGFloat = self.paddingHeight ?? (padding ?? superViewFrame.size.height / 8.0)
-        let aspectRatio:CGFloat = superViewFrame.size.width / superViewFrame.size.height
+        let paddingW: CGFloat = self.paddingWidth ?? (padding ?? superViewFrame.size.width / 8.0)
+        let paddingH: CGFloat = self.paddingHeight ?? (padding ?? superViewFrame.size.height / 8.0)
+        let aspectRatio: CGFloat = superViewFrame.size.width / superViewFrame.size.height
         
         if offsetW > (offsetH * aspectRatio) { // wide image
             let normW = superViewFrame.size.width - 2*paddingW

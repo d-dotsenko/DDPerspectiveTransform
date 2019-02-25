@@ -53,11 +53,12 @@ class ViewController: UIViewController {
     }
     
     func edit(image: UIImage) {
-        let cropViewController = DDPerspectiveTransformViewController()
+        let cropViewController = DDExampleCropViewController()
         cropViewController.delegate = self
         cropViewController.image = image
-        
-        present(cropViewController, animated: true, completion: nil)
+        cropViewController.pointSize = CGSize(width: 40, height: 40)
+
+        navigationController?.pushViewController(cropViewController, animated: true)
     }
 }
 

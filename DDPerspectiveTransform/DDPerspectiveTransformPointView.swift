@@ -25,13 +25,13 @@ import UIKit
 
 class DDPerspectiveTransformPointView: UIView {
     
-    public var color:UIColor? {
+    public var color: UIColor = UIColor.red {
         didSet {
             reset()
         }
     }
     
-    public var image:UIImage? {
+    public var image: UIImage? {
         set {
             pointImageView.image = newValue
             reset()
@@ -57,7 +57,9 @@ class DDPerspectiveTransformPointView: UIView {
     init(frame: CGRect, color: UIColor? = nil) {
         super.init(frame: frame)
         
-        self.color = color
+        if let aColor = color {
+            self.color = aColor
+        }
         addSubview(pointImageView)
         backgroundColor = UIColor.clear
     }
@@ -67,14 +69,14 @@ class DDPerspectiveTransformPointView: UIView {
     }
     
     override func layoutSubviews() {
-         super.layoutSubviews()
+        super.layoutSubviews()
         
         reset()
     }
     
     private func reset() {
         pointImageView.frame.size = CGSize(width: bounds.size.width/2, height: bounds.size.height/2)
-        pointImageView.center = CGPoint(x:frame.size.width/2, y:frame.size.height/2)
+        pointImageView.center = CGPoint(x: frame.size.width/2, y: frame.size.height/2)
         if pointImageView.image == nil { /// if no image -> point
             pointImageView.backgroundColor = color
             pointImageView.layer.cornerRadius = pointImageView.frame.size.width/2
