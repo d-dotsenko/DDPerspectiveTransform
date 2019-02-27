@@ -171,10 +171,11 @@ open class DDPerspectiveTransformViewController: UIViewController {
     /// MARK: - Public
     
     open func cropAction() {
-        guard let image = image else {
+        guard var image = image else {
             return
         }
-        if let ciImage: CIImage = CIImage(image: image) {
+        image = image.fixOrientation()
+        if let ciImage: CIImage = CIImage(image: image.fixOrientation()) {
             let croppedCIImage = getCroppedImage(image: ciImage, topL: points[0], topR: points[1], botL: points[3], botR: points[2])
             if let croppedImageCG = CIContext(options: nil).createCGImage(croppedCIImage, from: croppedCIImage.extent) {
                 let croptedImage = UIImage(cgImage: croppedImageCG)
@@ -208,11 +209,7 @@ open class DDPerspectiveTransformViewController: UIViewController {
         let botR = CGPoint(x: frame.origin.x + frame.size.width, y: frame.origin.y + frame.size.height)
         let botL = CGPoint(x: frame.origin.x, y: frame.origin.y + frame.size.height)
         
-        points.removeAll()
-        points.append(topL)
-        points.append(topR)
-        points.append(botR)
-        points.append(botL)
+        points = [topL, topR, botR, botL]
     }
     
     private func setupRectangleLayer() {
@@ -235,11 +232,10 @@ open class DDPerspectiveTransformViewController: UIViewController {
     }
     
     private func removePointsFromView() {
-        for aView in view.subviews {
-            if let tempView = aView as? DDPerspectiveTransformPointView {
-                tempView.removeFromSuperview()
-            }
-        }
+        view.subviews
+            .lazy
+            .filter { $0 is DDPerspectiveTransformPointView }
+            .forEach { $0.removeFromSuperview() }
     }
     
     private func getCroppedImage(image: CIImage, topL: CGPoint, topR: CGPoint, botL: CGPoint, botR: CGPoint) -> CIImage {
@@ -324,5 +320,20 @@ extension CAShapeLayer {
         self.strokeColor = aLineColor.cgColor
         self.lineWidth = aLineWidth
         self.fillColor = UIColor.clear.cgColor
+    }
+}
+
+extension UIImage {
+    func fixOrientation() -> UIImage {
+        if imageOrientation == .up {
+            return self
+        }
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        if let normalizedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
+            UIGraphicsEndImageContext()
+            return normalizedImage
+        }
+        return self
     }
 }
