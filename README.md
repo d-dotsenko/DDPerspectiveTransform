@@ -20,6 +20,52 @@ To install `DDPerspectiveTransform` via [CocoaPods](http://cocoapods.org), add t
 pod 'DDPerspectiveTransform'
 ```
 
+### Manually
+
+Add `DDPerspectiveTransform` folder to your Xcode project.
+
+## Usage
+
+See the example Xcode project.
+
+### Basic setup
+
+Create the `DDPerspectiveTransformViewController` instance and set the `image` and `delegate` variables. Push/present it.
+
+```swift
+let cropViewController = DDPerspectiveTransformViewController() 
+cropViewController.delegate = self 
+cropViewController.image = image
+navigationController?.pushViewController(cropViewController, animated: true)
+```
+
+### Populating the data
+
+Implement the following `delegate` methods:
+
+```swift
+func perspectiveTransformingDidFinish(controller: DDPerspectiveTransformViewController, croppedImage: UIImage)
+func perspectiveTransformingDidCancel(controller: DDPerspectiveTransformViewController)
+```
+
+### Customization
+
+```swift
+weak var delegate: DDPerspectiveTransformProtocol?
+var image: UIImage? // The image for cropping
+var padding: CGFloat? // Minimum padding value for all sides
+var paddingWidth: CGFloat? // Minimum padding value for left and right sides
+var paddingHeight: CGFloat? // Minimum padding value for top and bottom sides
+var boxLineColor: UIColor? // The color of box lines
+var boxLineWidth: CGFloat? // The width of box lines
+var pointSize: CGSize? // The size of checkpoint
+var pointColor: UIColor? // The color of checkpoint
+var pointImage: UIImage? // The image of checkpoint
+
+func cropAction()
+func cancelAction()
+```
+
 ## Requirements
 
 - iOS 8.2
