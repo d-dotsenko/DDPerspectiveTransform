@@ -7,17 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E11CC352230100D00B2DB6E /* DDPerspectiveTransform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F24698DA2223222700FE2CF2 /* DDPerspectiveTransform.framework */; };
+		0E11CC362230100D00B2DB6E /* DDPerspectiveTransform.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F24698DA2223222700FE2CF2 /* DDPerspectiveTransform.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F24698C4222320FE00FE2CF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24698C3222320FE00FE2CF2 /* AppDelegate.swift */; };
 		F24698C6222320FE00FE2CF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24698C5222320FE00FE2CF2 /* ViewController.swift */; };
 		F24698C9222320FE00FE2CF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F24698C7222320FE00FE2CF2 /* Main.storyboard */; };
 		F24698CB2223210100FE2CF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F24698CA2223210100FE2CF2 /* Assets.xcassets */; };
 		F24698CE2223210100FE2CF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F24698CC2223210100FE2CF2 /* LaunchScreen.storyboard */; };
-		F24698DC2223229400FE2CF2 /* DDPerspectiveTransform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F24698DA2223222700FE2CF2 /* DDPerspectiveTransform.framework */; };
 		F24698E0222323A500FE2CF2 /* DDExampleCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24698DF222323A500FE2CF2 /* DDExampleCropViewController.swift */; };
 		F24698E22223246600FE2CF2 /* DDExampleCropViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F24698E12223246600FE2CF2 /* DDExampleCropViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0E11CC372230100D00B2DB6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F24698D52223222600FE2CF2 /* DDPerspectiveTransform.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E37EAA6221FF3DE00E541A4;
+			remoteInfo = DDPerspectiveTransform;
+		};
 		F24698D92223222700FE2CF2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F24698D52223222600FE2CF2 /* DDPerspectiveTransform.xcodeproj */;
@@ -26,6 +34,20 @@
 			remoteInfo = DDPerspectiveTransform;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0E11CC392230100D00B2DB6E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0E11CC362230100D00B2DB6E /* DDPerspectiveTransform.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F24698C0222320FE00FE2CF2 /* DDPerspectiveTransformExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDPerspectiveTransformExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F24698DC2223229400FE2CF2 /* DDPerspectiveTransform.framework in Frameworks */,
+				0E11CC352230100D00B2DB6E /* DDPerspectiveTransform.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,10 +132,12 @@
 				F24698BC222320FE00FE2CF2 /* Sources */,
 				F24698BD222320FE00FE2CF2 /* Frameworks */,
 				F24698BE222320FE00FE2CF2 /* Resources */,
+				0E11CC392230100D00B2DB6E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0E11CC382230100D00B2DB6E /* PBXTargetDependency */,
 			);
 			name = DDPerspectiveTransformExample;
 			productName = DDPerspectiveTransformExample;
@@ -195,6 +219,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E11CC382230100D00B2DB6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DDPerspectiveTransform;
+			targetProxy = 0E11CC372230100D00B2DB6E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F24698C7222320FE00FE2CF2 /* Main.storyboard */ = {
@@ -335,6 +367,7 @@
 		F24698D32223210100FE2CF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DDPerspectiveTransformExample/Info.plist;
@@ -352,6 +385,7 @@
 		F24698D42223210100FE2CF2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DDPerspectiveTransformExample/Info.plist;
