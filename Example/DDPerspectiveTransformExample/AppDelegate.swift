@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  DDPerspectiveTransformExample
 //
-//  Created by Action on 24/02/2019.
-//  Copyright © 2019 DD. All rights reserved.
+//  Created by Dmitriy Dotsenko on 24/02/2019.
+//  Copyright © 2019 Dmitriy Dotsenko. All rights reserved.
 //
 
 import UIKit

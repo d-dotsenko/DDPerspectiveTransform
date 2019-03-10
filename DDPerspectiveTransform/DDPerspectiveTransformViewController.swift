@@ -303,7 +303,7 @@ extension CAShapeLayer {
         let aLineWidth: CGFloat = lineWidth ?? defaultLineWidth
         let path = UIBezierPath()
         
-        for (index, point) in points.enumerated().lazy {
+        for (index, point) in points.enumerated() {
             switch index {
             case 0:
                 path.move(to: point)
