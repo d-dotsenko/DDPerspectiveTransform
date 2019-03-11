@@ -1,9 +1,12 @@
 # DDPerspectiveTransform
 
-[![Language](http://img.shields.io/badge/language-swift-brightgreen.svg?style=flat)](https://developer.apple.com/swift)
+[![CocoaPods](https://img.shields.io/cocoapods/p/DDPerspectiveTransform.svg)](https://cocoapods.org/pods/DDPerspectiveTransform)
+[![CocoaPods](https://img.shields.io/cocoapods/v/DDPerspectiveTransform.svg)](http://cocoapods.org/pods/DDPerspectiveTransform)
 [![Platform](https://img.shields.io/cocoapods/p/DDPerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/DDPerspectiveTransform)
 [![License](https://img.shields.io/cocoapods/l/DDPerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/DDPerspectiveTransform)
 [![Version](https://img.shields.io/cocoapods/v/DDPerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/DDPerspectiveTransform)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-green.svg?style=flat)](https://developer.apple.com/swift/)
 
 
 Warp image transformation
@@ -18,6 +21,14 @@ To install `DDPerspectiveTransform` via [CocoaPods](http://cocoapods.org), add t
 
 ```
 pod 'DDPerspectiveTransform'
+```
+
+### Carthage
+
+To install `DDPerspectiveTransform` via [Carthage](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos), add the following line to your Cartfile:
+
+```
+github "d-dotsenko/DDPerspectiveTransform"
 ```
 
 ### Manually
@@ -68,7 +79,7 @@ func cancelAction()
 
 ## Requirements
 
-- iOS 8.2
+- iOS 9.0
 - Xcode 10, Swift 4.2
 
 ## License
