@@ -1,7 +1,5 @@
 # DDPerspectiveTransform
 
-[![CocoaPods](https://img.shields.io/cocoapods/p/DDPerspectiveTransform.svg)](https://cocoapods.org/pods/DDPerspectiveTransform)
-[![CocoaPods](https://img.shields.io/cocoapods/v/DDPerspectiveTransform.svg)](http://cocoapods.org/pods/DDPerspectiveTransform)
 [![Platform](https://img.shields.io/cocoapods/p/DDPerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/DDPerspectiveTransform)
 [![License](https://img.shields.io/cocoapods/l/DDPerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/DDPerspectiveTransform)
 [![Version](https://img.shields.io/cocoapods/v/DDPerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/DDPerspectiveTransform)
