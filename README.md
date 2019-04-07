@@ -21,12 +21,24 @@ To install `DDPerspectiveTransform` via [CocoaPods](http://cocoapods.org), add t
 pod 'DDPerspectiveTransform'
 ```
 
+After installing the cocoapod into your project import `DDPerspectiveTransform` with:
+
+```
+import DDPerspectiveTransform
+```
+
 ### Carthage
 
 To install `DDPerspectiveTransform` via [Carthage](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos), add the following line to your Cartfile:
 
 ```
 github "d-dotsenko/DDPerspectiveTransform"
+```
+
+And then run:
+
+```
+carthage update
 ```
 
 ### Manually

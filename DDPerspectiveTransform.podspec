@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 
 	spec.name 		= "DDPerspectiveTransform"
 	spec.platform 		= :ios
-	spec.summary 		= "DDPerspectiveTransform lets a user do warp image transformation"
+	spec.summary 		= "DDPerspectiveTransform allows a user to make warp image transformation"
 	spec.requires_arc 	= true
 	spec.version 		= "1.1.3"
 	spec.license 		= { :type => "MIT", :file => "LICENSE" }	
